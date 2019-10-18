@@ -1,0 +1,6 @@
+#!ipxe
+
+set dhcp_mac ${net0/mac:hex}
+set serv ${next-server}
+
+chain http://${serv}/install?mac=${dhcp_mac}

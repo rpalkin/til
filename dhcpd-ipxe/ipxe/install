@@ -1,0 +1,11 @@
+#!ipxe
+
+set srv ${next-server}
+
+set base-url http://${srv}
+
+
+kernel ${base-url}/ubuntu/install/netboot/ubuntu-installer/amd64/linux
+initrd ${base-url}/ubuntu/install/netboot/ubuntu-installer/amd64/initrd.gz
+imgargs linux file=${base-url}/ubuntu/preseed/ubuntu-server.seed preseed/url=${base-url}/preseed/ks.preseed ks=${base-url}/preseed/ks.cfg
+boot

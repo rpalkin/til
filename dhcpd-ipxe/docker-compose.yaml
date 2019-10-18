@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  tftp:
+    image: pghalliday/tftp
+    ports:
+    - "69:69/udp"
+    volumes:
+    - "./tftp:/var/tftpboot"
+  nginx:
+    image: nginx
+    ports:
+    - "80:80"
+    volumes:
+    - "./ipxe:/usr/share/nginx/html"
+    - "./nginx.conf:/etc/nginx/nginx.conf"
+  dhcp:
+    image: networkboot/dhcpd
+    command:    
+    - enp0s8 # interface
+    volumes:
+    - "./:/data"
