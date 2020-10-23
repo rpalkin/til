@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonAnnotations:
+    k8s.tinkoff.ru/cluster: stage
+    k8s.tinkoff.ru/environ: stage
+resources:
+    - ./configmap.yaml
+configMapGenerator:
+    - literals:
+        - kafka-server=m1.kafka.tcsbank.ru
+      name: my-config
+vars:
+    - name: VAR
+      objref:
+        kind: ConfigMap
+        name: my-config
+        apiVersion: v1
+      fieldref:
+        fieldpath: data.kafka-server
+configurations:    
+    - varconfig.yaml
