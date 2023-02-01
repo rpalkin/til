@@ -1,0 +1,23 @@
+baseURL: http://example.org/
+languageCode: en-us
+title: Today I Learned
+theme: PaperMod
+
+params:
+  mainSections:
+    - golang
+    - sre
+  homeInfoParams:
+    Title: Hi there wave
+    Content: A collection of concise write-ups on small things I learn day to day across a variety of languages and technologies. These are things that don't really warrant a full blog post.
+menu:
+  main:
+    - identifier: categories
+      name: categories
+      url: /categories/
+      weight: 10
+
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 20
