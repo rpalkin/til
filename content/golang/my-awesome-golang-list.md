@@ -27,15 +27,15 @@ ShowWordCount: true
 
 - https://github.com/go-resty/resty
 ```go
-    httpClient := resty.New()
-	httpClient.SetBaseURL("https://baseurl.com/")
-	httpClient.SetBasicAuth(key, secret)
+httpClient := resty.New()
+httpClient.SetBaseURL("https://baseurl.com/")
+httpClient.SetBasicAuth(key, secret)
 	
-    response := ResponseInterface{}
-    _, err = httpClient.R().
+response := ResponseInterface{}
+_, err = httpClient.R().
 		SetResult(&response).
 		SetPathParam("param", paramValue).
 		Get("api/method/{param}")
 	
-	spew.Dump(response)
+spew.Dump(response)
 ```
