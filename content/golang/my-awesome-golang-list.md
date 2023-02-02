@@ -39,3 +39,15 @@ _, err = httpClient.R().
 	
 spew.Dump(response)
 ```
+
+## Logging
+- https://github.com/uber-go/zap
+```go
+logger, err := zap.NewProduction()
+if err != nil {
+    panic(err)
+}
+zap.ReplaceGlobals(logger)
+
+zap.L().Error("error message")
+```
