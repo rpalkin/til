@@ -2,11 +2,9 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 # weight: 1
-# aliases: ["/first"]
 tags: ["first"]
 author: "Me"
-# author: ["Me", "You"] # multiple authors
-showToc: true
+showToc: false
 TocOpen: false
 draft: true
 hidemeta: false
@@ -23,8 +21,4 @@ ShowBreadCrumbs: false
 ShowPostNavLinks: true
 ShowWordCount: true
 ShowRssButtonInSectionTermList: true
-editPost:
-URL: "https://github.com/<path_to_repo>/content"
-Text: "Suggest Changes" # edit text
-appendFilePath: true # to append file path to Edit link
 ---
